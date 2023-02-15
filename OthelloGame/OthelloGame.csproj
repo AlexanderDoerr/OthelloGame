@@ -7,4 +7,16 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="assets\BlackPiece_lg.png" />
+    <None Remove="assets\Generic_Felt_Mat.jpeg" />
+    <None Remove="assets\WhitePiece_lg.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="assets\BlackPiece_lg.png" />
+    <Resource Include="assets\Generic_Felt_Mat.jpeg" />
+    <Resource Include="assets\WhitePiece_lg.png" />
+  </ItemGroup>
+
 </Project>
