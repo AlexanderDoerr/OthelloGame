@@ -18,7 +18,7 @@ namespace OthelloGame
     /// <summary>
     /// Interaction logic for BoardControl.xaml
     /// </summary>
-    public partial class BoardControl : UserControl
+    public partial class BoardControl : Window
     {
         public BoardControl()
         {
