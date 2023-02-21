@@ -28,6 +28,8 @@ namespace OthelloGame
             game = new Game();
         }
 
+
+
         private void Image_OnMouseMouseDown(object sender, RoutedEventArgs routedEventArgs)
         {
             Button btn = (Button)sender;
@@ -39,3 +41,6 @@ namespace OthelloGame
         }
     }
 }
+
+
+ 
