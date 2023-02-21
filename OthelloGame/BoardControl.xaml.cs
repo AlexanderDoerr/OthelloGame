@@ -25,6 +25,8 @@ namespace OthelloGame
             InitializeComponent();
         }
 
+
+
         private void Image_OnMouseMouseDown(object sender, RoutedEventArgs routedEventArgs)
         {
             Button btn = (Button)sender;
@@ -35,12 +37,7 @@ namespace OthelloGame
             img.Source = new BitmapImage(new Uri("assets/BlackPiece_lg.png", UriKind.Relative));
         }
     }
-
-
-    public class Player
-    {
-        public string Name { get; set; }
-        public int Score { get; set; }
-        public string Color { get; set; }
-    }
 }
+
+
+ 
