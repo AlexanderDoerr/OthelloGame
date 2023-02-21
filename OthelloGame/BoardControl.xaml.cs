@@ -77,7 +77,6 @@ namespace OthelloGame
             game.isBlackTurn = !game.isBlackTurn;
             //redundant but sure gonna call this anyways
             updateGrid();
-            img.Source = new BitmapImage(new Uri("assets/BlackPiece_lg.png", UriKind.Relative));
             btn.IsEnabled = false;
         }
 
