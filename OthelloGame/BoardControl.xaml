@@ -9,7 +9,7 @@
     <Window.Background>
         <ImageBrush ImageSource="assets\Generic_Felt_Mat.jpeg" />
     </Window.Background>
-    <Grid ShowGridLines="True">
+    <Grid ShowGridLines="True" Name="grid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
