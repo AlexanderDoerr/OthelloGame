@@ -20,10 +20,15 @@ namespace OthelloGame
     /// </summary>
     public partial class BoardControl : Window
     {
+
+        private Game game;
         public BoardControl()
         {
             InitializeComponent();
+            game = new Game();
         }
+
+
 
         private void Image_OnMouseMouseDown(object sender, RoutedEventArgs routedEventArgs)
         {
@@ -54,12 +59,7 @@ namespace OthelloGame
             btn.Background = new SolidColorBrush(Colors.Transparent);
         }
     }
-
-
-    public class Player
-    {
-        public string Name { get; set; }
-        public int Score { get; set; }
-        public string Color { get; set; }
-    }
 }
+
+
+ 
