@@ -24,5 +24,15 @@ namespace OthelloGame
         {
             InitializeComponent();
         }
+
+        private void Image_OnMouseMouseDown(object sender, RoutedEventArgs routedEventArgs)
+        {
+            Button btn = (Button)sender;
+            Grid grid = (Grid)btn.Parent;
+            int row = Grid.GetRow(btn);
+            int col = Grid.GetColumn(btn);
+            Image img = (Image)grid.Children.Cast<UIElement>().Last(x => Grid.GetRow(x) == row && Grid.GetColumn(x) == col);
+            img.Source = new BitmapImage(new Uri("assets/BlackPiece_lg.png", UriKind.Relative));
+        }
     }
 }
