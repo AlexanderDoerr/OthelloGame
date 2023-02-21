@@ -16,11 +16,14 @@ namespace OthelloGame
         }
 
         //create 8x8 array
-        Colors[,] board = new Colors[7, 7];
+        public Colors[,] board { get; set; } = new Colors[8, 8];
+
+        public bool isBlackTurn { get; set; } = true;
     }
 
     public enum Colors
     {
+        empty,
         black,
         white
     }
