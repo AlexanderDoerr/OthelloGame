@@ -67,13 +67,16 @@ namespace OthelloGame
             if (game.isBlackTurn)
             {
                 img.Source = new BitmapImage(new Uri("assets/BlackPiece_lg.png", UriKind.Relative));
-                
+                game.board[row, col] = Colors.black;
             }
             else
             {
                 img.Source = new BitmapImage(new Uri("assets/WhitePiece_lg.png", UriKind.Relative));
+                game.board[row, col] = Colors.white;
             }
             game.isBlackTurn = !game.isBlackTurn;
+            //redundant but sure gonna call this anyways
+            updateGrid();
         }
     }
 }
