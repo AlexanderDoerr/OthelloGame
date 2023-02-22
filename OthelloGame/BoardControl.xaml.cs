@@ -52,6 +52,12 @@ namespace OthelloGame
                         Image img = (Image)grid.Children.Cast<UIElement>().Last(x => Grid.GetRow(x) == row && Grid.GetColumn(x) == col);
                         img.Source = new BitmapImage(new Uri("assets/WhitePiece_lg.png", UriKind.Relative));
                     }
+                    else
+                    {
+                        //empty
+                        Image img = (Image)grid.Children.Cast<UIElement>().Last(x => Grid.GetRow(x) == row && Grid.GetColumn(x) == col);
+                        img.Source = new BitmapImage(new Uri("assets/EmptyPiece_lg.png", UriKind.Relative));
+                    }
                 }
             }
                
@@ -74,18 +80,15 @@ namespace OthelloGame
             //if we want to check if piece can be played it will be here //strech goal
             if (game.isBlackTurn)
             {
-                img.Source = new BitmapImage(new Uri("assets/BlackPiece_lg.png", UriKind.Relative));
                 game.board[row, col] = Colors.black;
                 //check for flips here then update game board array before the grid updates
             }
             else
             {
-                img.Source = new BitmapImage(new Uri("assets/WhitePiece_lg.png", UriKind.Relative));
                 game.board[row, col] = Colors.white;
                 //check for flips here then update game board array before the grid updates
             }
             game.isBlackTurn = !game.isBlackTurn;
-            //redundant but sure gonna call this anyways
             updateGrid();
             btn.IsEnabled = false;
         }
@@ -110,7 +113,18 @@ namespace OthelloGame
 
         private void BtnNewGame_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            game = new Game();
+            updateGrid();
+            //reset the buttons
+            Grid grid = (Grid)FindName("grid");
+            for (int row = 0; row < 8; row++)
+            {
+                for (int col = 0; col < 8; col++)
+                {
+                    Button btn = (Button)grid.Children.Cast<UIElement>().First(x => Grid.GetRow(x) == row && Grid.GetColumn(x) == col);
+                    btn.IsEnabled = true;
+                }
+            }
         }
 
         private void BtnNewGame_OnMouseEnter(object sender, MouseEventArgs e)
