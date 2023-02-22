@@ -107,6 +107,26 @@ namespace OthelloGame
             Button btn = (Button)sender;
             btn.Background = new SolidColorBrush(System.Windows.Media.Colors.Transparent);
         }
+
+        private void BtnNewGame_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void BtnNewGame_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            Button btn = (Button)sender;
+            if (btn.IsEnabled)
+            {
+                btn.Background = new SolidColorBrush(System.Windows.Media.Colors.Gray);
+            }
+        }
+
+        private void BtnNewGame_OnMouseLeave(object sender, MouseEventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.Background = new SolidColorBrush(System.Windows.Media.Colors.Transparent);
+        }
     }
 }
 
