@@ -57,6 +57,12 @@ namespace OthelloGame
                
         }
 
+        private void flipPieces()
+        {
+            //check horizontal vertcial and diagoinal
+
+        }
+
         private void Image_OnMouseMouseDown(object sender, RoutedEventArgs routedEventArgs)
         {
             Button btn = (Button)sender;
@@ -70,15 +76,16 @@ namespace OthelloGame
             {
                 img.Source = new BitmapImage(new Uri("assets/BlackPiece_lg.png", UriKind.Relative));
                 game.board[row, col] = Colors.black;
+                //check for flips here then update game board array before the grid updates
             }
             else
             {
                 img.Source = new BitmapImage(new Uri("assets/WhitePiece_lg.png", UriKind.Relative));
                 game.board[row, col] = Colors.white;
+                //check for flips here then update game board array before the grid updates
             }
             game.isBlackTurn = !game.isBlackTurn;
             //redundant but sure gonna call this anyways
-            //check for flips here then update game board array before the grid updates
             updateGrid();
             btn.IsEnabled = false;
         }
