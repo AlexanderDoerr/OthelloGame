@@ -57,8 +57,15 @@ namespace OthelloGame
                         //empty
                         Image img = (Image)grid.Children.Cast<UIElement>().Last(x => Grid.GetRow(x) == row && Grid.GetColumn(x) == col);
                         img.Source = new BitmapImage(new Uri("assets/EmptyPiece_lg.png", UriKind.Relative));
+
                     }
                 }
+            }
+                // check for a win
+            Colors winner = game.checkWin();
+            if (winner != Colors.empty)
+            {
+                MessageBox.Show(winner.ToString() + " wins!");
             }
                
         }

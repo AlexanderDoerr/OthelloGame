@@ -20,12 +20,12 @@ namespace OthelloGame
 
         public bool isBlackTurn { get; set; } = true;
 
-        private Colors checkWin()
+        public Colors checkWin()
         {
             int blackCount = 0;
             int whiteCount = 0;
             
-            if(hasEmptySpaces() == true)
+            if(hasEmptySpaces() == false)
             {
                 // count the number of black and white pieces on the board
                 for (int row = 0; row < 8; row++)
