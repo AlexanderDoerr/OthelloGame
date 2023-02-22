@@ -63,7 +63,7 @@ namespace OthelloGame
                
         }
 
-        private void flipPieces()
+        private void flipPieces(int row, int col, string turn)
         {
             //check horizontal vertcial and diagoinal
 
@@ -82,16 +82,19 @@ namespace OthelloGame
             {
                 game.board[row, col] = Colors.black;
                 //check for flips here then update game board array before the grid updates
+                flipPieces(row, col, "black");
             }
             else
             {
                 game.board[row, col] = Colors.white;
                 //check for flips here then update game board array before the grid updates
+                flipPieces(row, col, "white");
             }
             game.isBlackTurn = !game.isBlackTurn;
             updateGrid();
             btn.IsEnabled = false;
         }
+
 
         private void Button_OnMouseEnter(object sender, MouseEventArgs e)
         {
