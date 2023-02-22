@@ -54,6 +54,7 @@ namespace OthelloGame
                     }
                 }
             }
+               
         }
 
         private void Image_OnMouseMouseDown(object sender, RoutedEventArgs routedEventArgs)
@@ -64,6 +65,7 @@ namespace OthelloGame
             int col = Grid.GetColumn(btn);
             Image img = (Image)grid.Children.Cast<UIElement>().Last(x => Grid.GetRow(x) == row && Grid.GetColumn(x) == col);
             //add piece to game class
+            //if we want to check if piece can be played it will be here //strech goal
             if (game.isBlackTurn)
             {
                 img.Source = new BitmapImage(new Uri("assets/BlackPiece_lg.png", UriKind.Relative));
@@ -76,6 +78,7 @@ namespace OthelloGame
             }
             game.isBlackTurn = !game.isBlackTurn;
             //redundant but sure gonna call this anyways
+            //check for flips here then update game board array before the grid updates
             updateGrid();
             btn.IsEnabled = false;
         }
