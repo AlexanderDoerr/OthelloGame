@@ -79,8 +79,9 @@ namespace OthelloGame
 
     public enum Colors
     {
+        empty,
         black,
-        white,
-        empty
+        white
+        
     }
 }
