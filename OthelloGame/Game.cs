@@ -24,19 +24,22 @@ namespace OthelloGame
         {
             int blackCount = 0;
             int whiteCount = 0;
-
-            // count the number of black and white pieces on the board
-            for (int row = 0; row < 8; row++)
+            
+            if(hasEmptySpaces() == true)
             {
-                for (int col = 0; col < 8; col++)
+                // count the number of black and white pieces on the board
+                for (int row = 0; row < 8; row++)
                 {
-                    if (board[row, col] == Colors.black)
+                    for (int col = 0; col < 8; col++)
                     {
-                        blackCount++;
-                    }
-                    else if (board[row, col] == Colors.white)
-                    {
-                        whiteCount++;
+                        if (board[row, col] == Colors.black)
+                        {
+                            blackCount++;
+                        }
+                        else if (board[row, col] == Colors.white)
+                        {
+                            whiteCount++;
+                        }
                     }
                 }
             }
@@ -50,7 +53,7 @@ namespace OthelloGame
             {
                 return Colors.white;
             }
-            else
+            else 
             {
                 return Colors.empty;
             }
