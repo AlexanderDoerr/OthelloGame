@@ -43,8 +43,8 @@
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Name="lblGameData" Content="Game Output Goes Here" FontSize="20" Foreground="White" />
-                        <Label Grid.Column="1" Name="lblPlayerScore" Content="Player 1 score: __ Player 2 Score: __" FontSize="20" Foreground="White" />
+                        <Label Grid.Column="0" Name="lblGameData" Content="" FontSize="20" Foreground="White" />
+                        <Label Grid.Column="1" Name="lblPlayerScore" Content="Black score: __ White Score: __" FontSize="20" Foreground="White" />
                         <Button Grid.Column="2" Name="btnNewGame" Style="{StaticResource btnStyle}" Visibility="Visible"
                                 Click="BtnNewGame_OnClick" MouseEnter="BtnNewGame_OnMouseEnter"
                                 MouseLeave="BtnNewGame_OnMouseLeave">

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -63,8 +64,13 @@ namespace OthelloGame
             }
                 // check for a win
             Colors winner = game.checkWin();
+            //Update Score
+            Label score = (Label)FindName("lblPlayerScore");
+            score.Content = "Black score: " + game.blackCount + " White Score: " + game.whiteCount;
             if (winner != Colors.empty)
             {
+                Label output = (Label)FindName("lblGameData");
+                output.Content = winner.ToString() + " wins!";
                 MessageBox.Show(winner.ToString() + " wins!");
             }
                
@@ -463,6 +469,9 @@ namespace OthelloGame
                     btn.IsEnabled = true;
                 }
             }
+            //reset output
+            Label output = (Label)FindName("lblGameData");
+            output.Content = "";
         }
 
         private void BtnNewGame_OnMouseEnter(object sender, MouseEventArgs e)

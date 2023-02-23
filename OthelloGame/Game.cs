@@ -15,6 +15,9 @@ namespace OthelloGame
             board[3, 4] = board[4, 3] = Colors.white;
         }
 
+        public int blackCount { get; set; } = 2;
+        public int whiteCount { get; set; } = 2;
+
         //create 8x8 array
         public Colors[,] board { get; set; } = new Colors[8, 8];
 
@@ -43,6 +46,7 @@ namespace OthelloGame
                     }
                 }
             }
+            UpdateScore();
 
             // check for a win condition
             if (blackCount > whiteCount)
@@ -73,6 +77,29 @@ namespace OthelloGame
             }
 
             return false;
+        }
+
+        public void UpdateScore()
+        {
+            blackCount = 0;
+            whiteCount = 0;
+
+            for (int row = 0; row < 8; row++)
+            {
+                for (int col = 0; col < 8; col++)
+                {
+                    if (board[row, col] == Colors.black)
+                    {
+                        blackCount++;
+                    }
+                    else if (board[row, col] == Colors.white)
+                    {
+                        whiteCount++;
+                    }
+                }
+            }
+            this.blackCount = blackCount;
+            this.whiteCount = whiteCount;
         }
     }
 
