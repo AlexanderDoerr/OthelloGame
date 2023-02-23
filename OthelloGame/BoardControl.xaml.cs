@@ -73,11 +73,339 @@ namespace OthelloGame
         private void flipPieces(int row, int col, string turn)
         {
             //check horizontal vertcial and diagoinal
+            //check horizontal vertcial and diagoinal
+            if (turn.Equals("black"))
+            {
+                //check horziontally
+                //loop through the row to the right of the piece and find where there is another black piece other than the piece placed,
+                //find the first black piece
+                //if there is null before the black piece break dont flip pieces, 
+                for (int i = col + 1; i < 8; i++)
+                {
+                    if (game.board[row, i] == Colors.black)
+                    {
+                        //flip pieces
+                        for (int j = col + 1; j < i; j++)
+                        {
+                            game.board[row, j] = Colors.black;
+                        }
+                        break;
+                    }
+                    else if (game.board[row, i] == Colors.empty)
+                    {
+                        break;
+                    }
+                }
+                //left loop
+                for (int i = col - 1; i >= 0; i--)
+                {
+                    if (game.board[row, i] == Colors.black)
+                    {
+                        //flip pieces
+                        for (int j = col - 1; j > i; j--)
+                        {
+                            game.board[row, j] = Colors.black;
+                        }
+                        break;
+                    }
+                    else if (game.board[row, i] == Colors.empty)
+                    {
+                        break;
+                    }
+                }
+                //check vertically
+                //up loop
+                for (int i = row - 1; i >= 0; i--)
+                {
+                    if (game.board[i, col] == Colors.black)
+                    {
+                        //flip pieces
+                        for (int j = row - 1; j > i; j--)
+                        {
+                            game.board[j, col] = Colors.black;
+                        }
+                        break;
+                    }
+                    else if (game.board[i, col] == Colors.empty)
+                    {
+                        break;
+                    }
+                }
+                //down loop
+                for (int i = row + 1; i < 8; i++)
+                {
+                    if (game.board[i, col] == Colors.black)
+                    {
+                        //flip pieces
+                        for (int j = row + 1; j < i; j++)
+                        {
+                            game.board[j, col] = Colors.black;
+                        }
+                        break;
+                    }
+                    else if (game.board[i, col] == Colors.empty)
+                    {
+                        break;
+                    }
+                }
+                //check diagonally "/"
+                //up right
+                for (int i = row - 1, j = col + 1; i >= 0 && j < 8; i--, j++)
+                {
+                    if (game.board[i, j] == Colors.black)
+                    {
+                        //flip pieces
+                        for (int k = row - 1, l = col + 1; k > i && l < j; k--, l++)
+                        {
+                            game.board[k, l] = Colors.black;
+                        }
+                        break;
+                    }
+                    else if (game.board[i, j] == Colors.empty)
+                    {
+                        break;
+                    }
+                }
+                //down left
+                for (int i = row + 1, j = col - 1; i < 8 && j >= 0; i++, j--)
+                {
+                    if (game.board[i, j] == Colors.black)
+                    {
+                        //flip pieces
+                        for (int k = row + 1, l = col - 1; k < i && l > j; k++, l--)
+                        {
+                            game.board[k, l] = Colors.black;
+                        }
+                        break;
+                    }
+                    else if (game.board[i, j] == Colors.empty)
+                    {
+                        break;
+                    }
+                }
+                //check diagonally "\"
+                //up left
+                for (int i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--)
+                {
+                    if (game.board[i, j] == Colors.black)
+                    {
+                        //flip pieces
+                        for (int k = row - 1, l = col - 1; k > i && l > j; k--, l--)
+                        {
+                            game.board[k, l] = Colors.black;
+                        }
+                        break;
+                    }
+                    else if (game.board[i, j] == Colors.empty)
+                    {
+                        break;
+                    }
+                }
+                //down right
+                for (int i = row + 1, j = col + 1; i < 8 && j < 8; i++, j++)
+                {
+                    if (game.board[i, j] == Colors.black)
+                    {
+                        //flip pieces
+                        for (int k = row + 1, l = col + 1; k < i && l < j; k++, l++)
+                        {
+                            game.board[k, l] = Colors.black;
+                        }
+                        break;
+                    }
+                    else if (game.board[i, j] == Colors.empty)
+                    {
+                        break;
+                    }
+                }
+            }
+            else if (turn.Equals("white"))
+            {
 
+                //check horziontally
+                //loop through the row to the right of the piece and find where there is another black piece other than the piece placed,
+                //find the first black piece
+                //if there is null before the black piece break dont flip pieces, 
+                for (int i = col + 1; i < 8; i++)
+                {
+                    if (game.board[row, i] == Colors.white)
+                    {
+                        //flip pieces
+                        for (int j = col + 1; j < i; j++)
+                        {
+                            game.board[row, j] = Colors.white;
+                        }
+                        break;
+                    }
+                    else if (game.board[row, i] == Colors.empty)
+                    {
+                        break;
+                    }
+                }
+                //left loop
+                for (int i = col - 1; i >= 0; i--)
+                {
+                    if (game.board[row, i] == Colors.white)
+                    {
+                        //flip pieces
+                        for (int j = col - 1; j > i; j--)
+                        {
+                            game.board[row, j] = Colors.white;
+                        }
+                        break;
+                    }
+                    else if (game.board[row, i] == Colors.empty)
+                    {
+                        break;
+                    }
+                }
+                //check vertically
+                //up loop
+                for (int i = row - 1; i >= 0; i--)
+                {
+                    if (game.board[i, col] == Colors.white)
+                    {
+                        //flip pieces
+                        for (int j = row - 1; j > i; j--)
+                        {
+                            game.board[j, col] = Colors.white;
+                        }
+                        break;
+                    }
+                    else if (game.board[i, col] == Colors.empty)
+                    {
+                        break;
+                    }
+                }
+                //down loop
+                for (int i = row + 1; i < 8; i++)
+                {
+                    if (game.board[i, col] == Colors.white)
+                    {
+                        //flip pieces
+                        for (int j = row + 1; j < i; j++)
+                        {
+                            game.board[j, col] = Colors.white;
+                        }
+                        break;
+                    }
+                    else if (game.board[i, col] == Colors.empty)
+                    {
+                        break;
+                    }
+                }
+                //check diagonally "/"
+                //up right
+                for (int i = row - 1, j = col + 1; i >= 0 && j < 8; i--, j++)
+                {
+                    if (game.board[i, j] == Colors.white)
+                    {
+                        //flip pieces
+                        for (int k = row - 1, l = col + 1; k > i && l < j; k--, l++)
+                        {
+                            game.board[k, l] = Colors.white;
+                        }
+                        break;
+                    }
+                    else if (game.board[i, j] == Colors.empty)
+                    {
+                        break;
+                    }
+                }
+                //down left
+                for (int i = row + 1, j = col - 1; i < 8 && j >= 0; i++, j--)
+                {
+                    if (game.board[i, j] == Colors.white)
+                    {
+                        //flip pieces
+                        for (int k = row + 1, l = col - 1; k < i && l > j; k++, l--)
+                        {
+                            game.board[k, l] = Colors.white;
+                        }
+                        break;
+                    }
+                    else if (game.board[i, j] == Colors.empty)
+                    {
+                        break;
+                    }
+                }
+                //check diagonally "\"
+                //up left
+                for (int i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--)
+                {
+                    if (game.board[i, j] == Colors.white)
+                    {
+                        //flip pieces
+                        for (int k = row - 1, l = col - 1; k > i && l > j; k--, l--)
+                        {
+                            game.board[k, l] = Colors.white;
+                        }
+                        break;
+                    }
+                    else if (game.board[i, j] == Colors.empty)
+                    {
+                        break;
+                    }
+                }
+                //down right
+                for (int i = row + 1, j = col + 1; i < 8 && j < 8; i++, j++)
+                {
+                    if (game.board[i, j] == Colors.white)
+                    {
+                        //flip pieces
+                        for (int k = row + 1, l = col + 1; k < i && l < j; k++, l++)
+                        {
+                            game.board[k, l] = Colors.white;
+                        }
+                        break;
+                    }
+                    else if (game.board[i, j] == Colors.empty)
+                    {
+                        break;
+                    }
+                }
+                //check diagonally "/"
+                //up right
+                for (int i = row - 1, j = col + 1; i >= 0 && j < 8; i--, j++)
+                {
+                    if (game.board[i, j] == Colors.white)
+                    {
+                        //flip pieces
+                        for (int k = row - 1, l = col + 1; k > i && l < j; k--, l++)
+                        {
+                            game.board[k, l] = Colors.white;
+                        }
+                        break;
+                    }
+                    else if (game.board[i, j] == Colors.empty)
+                    {
+                        break;
+                    }
+                }
+                //down left
+                for (int i = row + 1, j = col - 1; i < 8 && j >= 0; i++, j--)
+                {
+                    if (game.board[i, j] == Colors.white)
+                    {
+                        //flip pieces
+                        for (int k = row + 1, l = col - 1; k < i && l > j; k++, l--)
+                        {
+                            game.board[k, l] = Colors.white;
+                        }
+                        break;
+                    }
+                    else if (game.board[i, j] == Colors.empty)
+                    {
+                        break;
+                    }
+                }
+
+            }
         }
+     
 
-        private void Image_OnMouseMouseDown(object sender, RoutedEventArgs routedEventArgs)
-        {
+            private void Image_OnMouseMouseDown(object sender, RoutedEventArgs routedEventArgs)
+            {
             Button btn = (Button)sender;
             Grid grid = (Grid)btn.Parent;
             int row = Grid.GetRow(btn);
